@@ -13,8 +13,8 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics     import roc_auc_score
 from sklearn.utils       import resample
 
-from ecg.augmentations import ECGAugmentations
-from ecg.models        import TwoTower
+# from ecg.augmentations import ECGAugmentations
+# from ecg.models        import TwoTower
 
 # ─── USER CONFIG ──────────────────────────────────────────────────────────────
 
