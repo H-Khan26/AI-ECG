@@ -17,6 +17,6 @@
 ---
 
 ### conftest.py - Formatting & readability:
-Tests are short, named for intent, and skip gracefully if a feature isn’t present
-A small set of helpers in conftest.py discovers model class and common function names, so the suite stays robust to renames.
-All tests are fast (sub-second to a few seconds) and CI-ready on CPU
+- Tests are short, named for intent, and skip gracefully if a feature isn’t present.
+- A small set of helpers in conftest.py discovers model class and common function names, so the suite stays robust to renames.
+- All tests are fast (sub-second to a few seconds) and CI-ready on CPU.
