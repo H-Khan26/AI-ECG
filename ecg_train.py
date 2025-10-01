@@ -18,7 +18,7 @@ from sklearn.utils       import resample
 
 # ─── USER CONFIG ──────────────────────────────────────────────────────────────
 
-# Your master CSV from xml_to_csv + append_ecg_features
+# Master CSV from xml_to_csv + append_ecg_features
 CSV_PATH   = "data/ecg_master.csv"
 
 # Lead order in the CSV
