@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Data and model artifacts: ECG data is private (UCLA Health) and must never be committed
+data/
+*.csv
+*.xml
+*.pt
+*.pth
+*.joblib
+*.pkl
+
+# Evaluation outputs
+eval_outputs/
+*.png
+
+# OS
+Thumbs.db
+.DS_Store

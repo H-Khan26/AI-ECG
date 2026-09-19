@@ -1,0 +1,17 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+
+# ECG signal processing (R-peak detection, HRV, interval features)
+neurokit2
+
+# Tests
+pytest
+
+# PyTorch is intentionally not pinned here: the correct wheel depends on the
+# machine's CUDA capability. Install it separately before this file, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+# for Blackwell-class GPUs, or plain `pip install torch` for CPU-only.
