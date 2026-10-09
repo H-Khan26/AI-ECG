@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="532" viewBox="0 0 1200 532" role="img" aria-labelledby="t d">
+<title id="t">AI-ECG v1 data pipeline</title>
+<desc id="d">Seven stages from a 30,000+ record ECG archive to a model-ready cohort of 718 ECGs from 960 patients (86 CTRCD, 632 control), with a log-scale strip of data volume.</desc>
+<style>
+.sans{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif}
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace}
+.flow{animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+@media (prefers-reduced-motion: reduce){.flow{animation:none}}
+</style>
+<rect width="1200" height="532" fill="#ffffff"/>
+<text class="mono" x="0" y="20" font-size="15" letter-spacing="1.6" fill="#59636e">V1 DATA PIPELINE · UCLA HEALTH</text>
+<text class="mono" x="1198" y="20" font-size="15" text-anchor="end" fill="#818b98">XML archive → model-ready cohort</text>
+<rect x="0.5" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="13" y="76" font-size="15" fill="#818b98">01</text>
+<text class="sans" x="13" y="102" font-size="17" font-weight="600" fill="#1f2328">Archive</text>
+<text class="sans" x="13" y="132" font-size="15" fill="#59636e">GE MUSE-style</text>
+<text class="sans" x="13" y="152" font-size="15" fill="#59636e">XML ECG files</text>
+<path d="M14 192.5H136.9" stroke="#d0d7de"/>
+<text class="mono" x="13" y="218" font-size="15" font-weight="600" fill="#1f2328">30,000+</text>
+<text class="mono" x="13" y="238" font-size="15" fill="#59636e">records</text>
+<path d="M153.9 153.0H167.9" stroke="#d0d7de" stroke-width="2"/>
+<path class="flow" d="M153.9 153.0H167.9" stroke="#2a78d6" stroke-width="2" stroke-dasharray="3 7"/>
+<path d="M165.9 148.5L171.9 153.0L165.9 157.5" fill="none" stroke="#59636e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="175.4" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="187.9" y="76" font-size="15" fill="#818b98">02</text>
+<text class="sans" x="187.9" y="102" font-size="17" font-weight="600" fill="#1f2328">Decode</text>
+<text class="sans" x="187.9" y="132" font-size="15" fill="#59636e">Base64 → int16;</text>
+<text class="sans" x="187.9" y="152" font-size="15" fill="#59636e">8 leads × 2 sets</text>
+<text class="sans" x="187.9" y="172" font-size="15" fill="#59636e">(median, rhythm)</text>
+<path d="M188.9 192.5H311.7" stroke="#d0d7de"/>
+<text class="mono" x="187.9" y="218" font-size="15" font-weight="600" fill="#1f2328">20,000+</text>
+<text class="mono" x="187.9" y="238" font-size="15" fill="#59636e">XMLs decoded</text>
+<path d="M328.7 153.0H342.7" stroke="#d0d7de" stroke-width="2"/>
+<path class="flow" d="M328.7 153.0H342.7" stroke="#2a78d6" stroke-width="2" stroke-dasharray="3 7"/>
+<path d="M340.7 148.5L346.7 153.0L340.7 157.5" fill="none" stroke="#59636e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="350.2" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="362.7" y="76" font-size="15" fill="#818b98">03</text>
+<text class="sans" x="362.7" y="102" font-size="17" font-weight="600" fill="#1f2328">Quality control</text>
+<text class="sans" x="362.7" y="132" font-size="15" fill="#59636e">Byte and sample</text>
+<text class="sans" x="362.7" y="152" font-size="15" fill="#59636e">checks, clamp,</text>
+<text class="sans" x="362.7" y="172" font-size="15" fill="#59636e">paced removed</text>
+<path d="M363.7 192.5H486.6" stroke="#d0d7de"/>
+<text class="mono" x="362.7" y="218" font-size="15" font-weight="600" fill="#1f2328">byte · sample</text>
+<text class="mono" x="362.7" y="238" font-size="15" fill="#59636e">limit · paced</text>
+<path d="M503.6 153.0H517.6" stroke="#d0d7de" stroke-width="2"/>
+<path class="flow" d="M503.6 153.0H517.6" stroke="#2a78d6" stroke-width="2" stroke-dasharray="3 7"/>
+<path d="M515.6 148.5L521.6 153.0L515.6 157.5" fill="none" stroke="#59636e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="525.1" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="537.6" y="76" font-size="15" fill="#818b98">04</text>
+<text class="sans" x="537.6" y="102" font-size="17" font-weight="600" fill="#1f2328">Normalise</text>
+<text class="sans" x="537.6" y="132" font-size="15" fill="#59636e">FIR-decimate</text>
+<text class="sans" x="537.6" y="152" font-size="15" fill="#59636e">500 → 250 Hz;</text>
+<text class="sans" x="537.6" y="172" font-size="15" fill="#59636e">I, II, V1–V6</text>
+<path d="M538.6 192.5H661.4" stroke="#d0d7de"/>
+<text class="mono" x="537.6" y="218" font-size="15" font-weight="600" fill="#1f2328">8 × 2500</text>
+<text class="mono" x="537.6" y="238" font-size="15" fill="#59636e">@ 250 Hz</text>
+<path d="M678.4 153.0H692.4" stroke="#d0d7de" stroke-width="2"/>
+<path class="flow" d="M678.4 153.0H692.4" stroke="#2a78d6" stroke-width="2" stroke-dasharray="3 7"/>
+<path d="M690.4 148.5L696.4 153.0L690.4 157.5" fill="none" stroke="#59636e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="699.9" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="712.4" y="76" font-size="15" fill="#818b98">05</text>
+<text class="sans" x="712.4" y="102" font-size="17" font-weight="600" fill="#1f2328">Cohort window</text>
+<text class="sans" x="712.4" y="132" font-size="15" fill="#59636e">ECGs around ICI</text>
+<text class="sans" x="712.4" y="152" font-size="15" fill="#59636e">start, linked by</text>
+<text class="sans" x="712.4" y="172" font-size="15" fill="#59636e">patient ID</text>
+<path d="M713.4 192.5H836.3" stroke="#d0d7de"/>
+<text class="mono" x="712.4" y="218" font-size="15" font-weight="600" fill="#1f2328">−4 y … +30 d</text>
+<text class="mono" x="712.4" y="238" font-size="15" fill="#59636e">ICI start = 0</text>
+<path d="M853.3 153.0H867.3" stroke="#d0d7de" stroke-width="2"/>
+<path class="flow" d="M853.3 153.0H867.3" stroke="#2a78d6" stroke-width="2" stroke-dasharray="3 7"/>
+<path d="M865.3 148.5L871.3 153.0L865.3 157.5" fill="none" stroke="#59636e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="874.8" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="887.3" y="76" font-size="15" fill="#818b98">06</text>
+<text class="sans" x="887.3" y="102" font-size="17" font-weight="600" fill="#1f2328">Features</text>
+<text class="sans" x="887.3" y="132" font-size="15" fill="#59636e">NeuroKit2 on</text>
+<text class="sans" x="887.3" y="152" font-size="15" fill="#59636e">lead II, joined</text>
+<text class="sans" x="887.3" y="172" font-size="15" fill="#59636e">with clinical</text>
+<path d="M888.3 192.5H1011.1" stroke="#d0d7de"/>
+<text class="mono" x="887.3" y="218" font-size="15" font-weight="600" fill="#1f2328">HR · QRS</text>
+<text class="mono" x="887.3" y="238" font-size="15" fill="#59636e">QT · T axis</text>
+<path d="M1028.1 153.0H1042.1" stroke="#d0d7de" stroke-width="2"/>
+<path class="flow" d="M1028.1 153.0H1042.1" stroke="#2a78d6" stroke-width="2" stroke-dasharray="3 7"/>
+<path d="M1040.1 148.5L1046.1 153.0L1040.1 157.5" fill="none" stroke="#59636e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1049.6" y="46.5" width="149.9" height="213" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text class="mono" x="1062.1" y="76" font-size="15" fill="#818b98">07</text>
+<text class="sans" x="1062.1" y="102" font-size="17" font-weight="600" fill="#1f2328">Model-ready</text>
+<text class="sans" x="1062.1" y="132" font-size="15" fill="#59636e">86 CTRCD ECGs</text>
+<text class="sans" x="1062.1" y="152" font-size="15" fill="#59636e">632 control ECGs</text>
+<path d="M1063.1 192.5H1186" stroke="#d0d7de"/>
+<text class="mono" x="1062.1" y="218" font-size="15" font-weight="600" fill="#1f2328">718 ECGs</text>
+<text class="mono" x="1062.1" y="238" font-size="15" fill="#59636e">960 patients</text>
+<text class="mono" x="0" y="310" font-size="15" letter-spacing="1.6" fill="#59636e">DATA VOLUME · LOG SCALE</text>
+<path d="M270 332V498" stroke="rgba(227,74,71,0.26)" stroke-width="1"/>
+<text class="mono" x="270" y="520" font-size="15" text-anchor="middle" fill="#818b98">10</text>
+<path d="M333.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M370.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M396.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M416.8 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M433.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M447.5 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M459.6 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M470.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M480 332V498" stroke="rgba(227,74,71,0.26)" stroke-width="1"/>
+<text class="mono" x="480" y="520" font-size="15" text-anchor="middle" fill="#818b98">100</text>
+<path d="M543.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M580.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M606.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M626.8 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M643.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M657.5 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M669.6 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M680.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M690 332V498" stroke="rgba(227,74,71,0.26)" stroke-width="1"/>
+<text class="mono" x="690" y="520" font-size="15" text-anchor="middle" fill="#818b98">1,000</text>
+<path d="M753.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M790.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M816.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M836.8 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M853.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M867.5 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M879.6 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M890.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M900 332V498" stroke="rgba(227,74,71,0.26)" stroke-width="1"/>
+<text class="mono" x="900" y="520" font-size="15" text-anchor="middle" fill="#818b98">10,000</text>
+<path d="M963.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1000.2 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1026.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1046.8 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1063.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1077.5 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1089.6 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1100.4 332V498" stroke="rgba(227,74,71,0.1)" stroke-width="1"/>
+<path d="M1110 332V498" stroke="rgba(227,74,71,0.26)" stroke-width="1"/>
+<text class="mono" x="1110" y="520" font-size="15" text-anchor="middle" fill="#818b98">100,000</text>
+<path d="M270 498.5H1110" stroke="rgba(227,74,71,0.26)" stroke-width="1"/>
+<text class="mono" x="0" y="356.5" font-size="15" fill="#818b98">01</text>
+<text class="sans" x="34" y="356.5" font-size="15" fill="#1f2328">ECG records in archive</text>
+<rect x="270" y="344" width="730.2" height="14" rx="2" fill="#818b98"/>
+<text class="mono" x="1010.2" y="356.5" font-size="15" font-weight="600" fill="#1f2328" xml:space="preserve">30,000+</text>
+<text class="mono" x="0" y="388.5" font-size="15" fill="#818b98">02</text>
+<text class="sans" x="34" y="388.5" font-size="15" fill="#1f2328">Encrypted XMLs decoded</text>
+<rect x="270" y="376" width="693.2" height="14" rx="2" fill="#818b98"/>
+<text class="mono" x="973.2" y="388.5" font-size="15" font-weight="600" fill="#1f2328" xml:space="preserve">20,000+</text>
+<text class="mono" x="0" y="420.5" font-size="15" fill="#818b98">07</text>
+<text class="sans" x="34" y="420.5" font-size="15" fill="#1f2328">Model-ready ECGs</text>
+<rect x="270" y="408" width="389.8" height="14" rx="2" fill="#818b98"/>
+<text class="mono" x="669.8" y="420.5" font-size="15" font-weight="600" fill="#1f2328" xml:space="preserve">718</text>
+<text class="sans" x="62" y="452.5" font-size="15" fill="#59636e">CTRCD</text>
+<path d="M40 428V447.0H56" fill="none" stroke="#d0d7de" stroke-width="1.2"/>
+<rect x="270" y="440" width="196.2" height="14" rx="2" fill="#1f2328"/>
+<text class="mono" x="476.2" y="452.5" font-size="15" font-weight="600" fill="#1f2328" xml:space="preserve">86<tspan font-weight="400" fill="#59636e">  ·  126 patients</tspan></text>
+<text class="sans" x="62" y="484.5" font-size="15" fill="#59636e">ICI control</text>
+<path d="M40 460V479.0H56" fill="none" stroke="#d0d7de" stroke-width="1.2"/>
+<rect x="270" y="472" width="378.2" height="14" rx="2" fill="#59636e"/>
+<text class="mono" x="658.2" y="484.5" font-size="15" font-weight="600" fill="#1f2328" xml:space="preserve">632<tspan font-weight="400" fill="#59636e">  ·  834 patients</tspan></text>
+</svg>

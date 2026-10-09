@@ -9,6 +9,13 @@ __pycache__/
 venv/
 env/
 
+# IDE
+.idea/
+.vscode/
+
+# Local planning notes
+notes/
+
 # Data and model artifacts: ECG data is private (UCLA Health) and must never be committed
 data/
 *.csv
@@ -21,6 +28,10 @@ data/
 # Evaluation outputs
 eval_outputs/
 *.png
+!docs/assets/*.png
+
+# Cached open-data records used to render README figures
+docs/figures/.cache/
 
 # OS
 Thumbs.db

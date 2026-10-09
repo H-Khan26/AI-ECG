@@ -1,3 +1,15 @@
+# xml_to_csv.py
+
+import base64
+import glob
+import os
+import shutil
+import struct
+import xml.etree.ElementTree as ET
+
+import neurokit2 as nk
+import numpy as np
+from scipy.signal import resample
 
 
 def base64_to_numerical(base64_string):

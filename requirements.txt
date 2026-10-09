@@ -8,6 +8,9 @@ matplotlib
 # ECG signal processing (R-peak detection, HRV, interval features)
 neurokit2
 
+# WFDB-format records (PTB-XL, MIMIC-IV-ECG)
+wfdb
+
 # Tests
 pytest
 

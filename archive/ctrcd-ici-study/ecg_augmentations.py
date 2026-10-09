@@ -1,4 +1,4 @@
-# ai_ecg/augmentations.py
+# ecg_augmentations.py
 
 import numpy as np
 

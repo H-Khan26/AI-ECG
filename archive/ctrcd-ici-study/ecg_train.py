@@ -1,4 +1,4 @@
-# ai_ecg/train.py
+# ecg_train.py
 
 import json
 import numpy as np
@@ -13,8 +13,8 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics     import roc_auc_score
 from sklearn.utils       import resample
 
-# from ecg.augmentations import ECGAugmentations
-# from ecg.models        import TwoTower
+from ecg_augmentations import ECGAugmentations
+from models            import TwoTower
 
 # ─── USER CONFIG ──────────────────────────────────────────────────────────────
 

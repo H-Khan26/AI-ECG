@@ -1,4 +1,4 @@
-# ai_ecg/eval.py
+# Model_eval.py
 
 import os
 import argparse

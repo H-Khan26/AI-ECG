@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-label="Timeline diagram. v1 UCLA ICI cohort: ECGs from 4 years before to 30 days after ICI start, so the window crosses the index; outcome is the CTRCD registry label. v2 planned open-data replication: baseline window 365 days to 0 days before the index containing a baseline echo with LVEF at least 50 percent and the last ECG before the index as model input; index event at t = 0 (drug start, surgery or admission); outcome window 30 to 365 days after with a later echo showing LVEF at most 40 percent or a drop of at least 10 points. Data: MIMIC-IV-ECG, MIMIC-IV hosp and MIMIC-IV-ECHO.">
+<title>v1 and v2 study design</title>
+<style>.s{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;font-size:15px}.m{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;font-size:15px}.fx{animation:fi .7s ease-out both}.d1{animation-delay:.15s}.d2{animation-delay:.75s}.d3{animation-delay:1.35s}.d4{animation-delay:1.95s}@keyframes fi{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion: reduce){.fx{animation:none!important}.flow{display:none}}</style>
+<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#3987e5" fill-opacity="0.16"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3987e5" stroke-width="2.2" stroke-opacity="0.75"/></pattern></defs>
+<rect width="1200" height="690" fill="#0d1117"/>
+<line x1="232" y1="96" x2="232" y2="412" stroke="#30363d" stroke-width="1" stroke-dasharray="2 4"/>
+<line x1="673.5" y1="96" x2="673.5" y2="412" stroke="#30363d" stroke-width="1" stroke-dasharray="2 4"/>
+<line x1="1048" y1="96" x2="1048" y2="412" stroke="#30363d" stroke-width="1" stroke-dasharray="2 4"/>
+<g class="fx d1">
+<text x="24" y="82" class="s" font-size="17" fill="#e6edf3" font-weight="600">v1 · UCLA ICI cohort</text>
+<text x="206" y="82" class="s" fill="#9198a1">index event = ICI start</text>
+<rect x="48" y="112" width="146" height="40" fill="#3987e5" fill-opacity="0.16" stroke="#3987e5" stroke-width="1.2" rx="3"/>
+<rect x="224" y="112" width="449.5" height="40" fill="#3987e5" fill-opacity="0.16" stroke="#3987e5" stroke-width="1.2" rx="3"/>
+<rect x="193" y="110" width="32" height="44" fill="#0d1117"/>
+<line x1="200" y1="156" x2="208" y2="108" stroke="#3987e5" stroke-width="1.5"/>
+<line x1="210" y1="156" x2="218" y2="108" stroke="#3987e5" stroke-width="1.5"/>
+<rect x="640" y="112" width="33.5" height="40" fill="url(#hatch)"/>
+<line x1="673.5" y1="112" x2="673.5" y2="152" stroke="#3987e5" stroke-width="1.2"/>
+<text x="242" y="138" class="s" fill="#e6edf3">ECG window  −4 y … +30 d around ICI start</text>
+<path d="M656.8 156V174H678.8" fill="none" stroke="#9198a1" stroke-width="1.1"/>
+<text x="684.8" y="179" class="s" fill="#9198a1">window crosses the index</text>
+<rect x="770" y="112" width="406" height="40" rx="3" fill="#0d1117" stroke="#199e70" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="786" y="138" class="s" fill="#199e70" font-weight="600">Outcome</text>
+<text x="858" y="138" class="s" fill="#e6edf3">CTRCD registry label</text>
+</g>
+<g class="fx d2">
+<line x1="640" y1="50" x2="640" y2="412" stroke="#e66767" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="640" y="36" class="s" fill="#e66767" font-weight="600" text-anchor="middle">t = 0 · index event</text>
+</g>
+<g class="fx d3">
+<text x="24" y="222" class="s" font-size="17" fill="#e6edf3" font-weight="600">v2 · open-data replication (planned)</text>
+<text x="326" y="222" class="s" fill="#9198a1">index event = drug start · surgery · admission</text>
+<rect x="232" y="252" width="408" height="40" rx="3" fill="#3987e5" fill-opacity="0.16" stroke="#3987e5" stroke-width="1.2"/>
+<text x="244" y="278" class="s" fill="#e6edf3">Baseline window  −365 d … 0 d</text>
+<rect x="466.3" y="266.0" width="12" height="12" transform="rotate(45 472.3 272.0)" fill="#3987e5"/>
+<path d="M472.3 294V314" fill="none" stroke="#9198a1" stroke-width="1.1"/>
+<text x="478.3" y="332" class="s" fill="#e6edf3" font-weight="600" text-anchor="end">(a) baseline echo · LVEF ≥ 50 %</text>
+<rect x="586.2" y="257" width="54" height="30" rx="2" fill="#0d1117" stroke="#3987e5" stroke-width="1"/>
+<path d="M588.2 281.3L588.5 281.2L588.7 281.2L589 281.2L589.3 281.4L589.6 281.3L589.9 281L590.2 281.2L590.5 281L590.7 280.9L591 280.9L591.3 281.2L591.6 281L591.9 280.8L592.2 280.8L592.5 280.9L592.7 280.9L593 281L593.3 281L593.6 280.9L593.9 280.8L594.2 280.9L594.5 280.4L594.7 280.3L595 280.3L595.3 279.8L595.6 279.5L595.9 279.3L596.2 279L596.5 279L596.7 279.1L597 279.3L597.3 279.5L597.6 279.7L597.9 279.8L598.2 280L598.5 280.1L598.7 280.2L599 280.3L599.3 280.5L599.6 280.7L599.9 280.8L600.2 281L600.5 281L600.7 281L601 280.7L601.3 280.7L601.6 280.9L601.9 280.9L602.2 280.8L602.5 281L602.7 281.1L603 281.1L603.3 281.6L603.6 281.3L603.9 280.6L604.2 279.5L604.5 278.3L604.7 277.8L605 276.9L605.3 274L605.6 270.8L605.9 267.7L606.2 271.4L606.5 274.8L606.7 276.7L607 278.3L607.3 279.4L607.6 280.4L607.9 280.9L608.2 281L608.5 280.9L608.7 280.9L609 280.8L609.3 280.9L609.6 280.7L609.9 280.9L610.2 281.1L610.5 281.2L610.7 281.1L611 280.9L611.3 280.9L611.6 280.9L611.9 280.9L612.2 281L612.5 281L612.7 281.1L613 280.9L613.3 280.6L613.6 280.6L613.9 280.7L614.2 281.1L614.5 281.3L614.7 281.5L615 281.6L615.3 281.5L615.6 281.6L615.9 281.5L616.2 281.4L616.5 281.4L616.7 281.4L617 281.3L617.3 281.3L617.6 281.3L617.9 281.1L618.2 281L618.5 280.8L618.7 280.6L619 280.8L619.3 280.8L619.6 280.6L619.9 280.5L620.2 280.4L620.5 280.2L620.7 280.1L621 280.2L621.3 280.2L621.6 280.3L621.9 280.4L622.2 279.9L622.5 279.8L622.7 279.8L623 279.7L623.3 279.8L623.6 279.8L623.9 279.9L624.2 279.6L624.5 279.8L624.7 279.8L625 279.6L625.3 279.5L625.6 279.7L625.9 279.4L626.2 279.2L626.5 279.1L626.7 279.1L627 279L627.3 278.9L627.6 278.9L627.9 278.8L628.2 278.9L628.5 279L628.7 279.1L629 279.5L629.3 279.8L629.6 280L629.9 280.5L630.2 280.9L630.5 281.2L630.7 281.5L631 281.6L631.3 281.8L631.6 281.9L631.9 281.7L632.2 281.9L632.5 282.1L632.7 282.2L633 282.1L633.3 282.4L633.6 282.6L633.9 282.9L634.2 282.8L634.5 282.8L634.7 282.7L635 282.7L635.3 282.6L635.6 282.6L635.9 282.6L636.2 282.8L636.5 282.9L636.7 282.8L637 282.8L637.3 282.7L637.6 282.7" fill="none" stroke="#e6edf3" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M613.2 294V338" fill="none" stroke="#9198a1" stroke-width="1.1"/>
+<text x="619.2" y="356" class="s" fill="#e6edf3" font-weight="600" text-anchor="end">(b) last ECG before the index</text>
+<text x="619.2" y="378" class="s" fill="#9198a1" text-anchor="end">= model input</text>
+</g>
+<g class="fx d4">
+<rect x="673.5" y="252" width="374.5" height="40" rx="3" fill="#199e70" fill-opacity="0.16" stroke="#199e70" stroke-width="1.2"/>
+<text x="685.5" y="278" class="s" fill="#e6edf3">Outcome window  +30 d … +365 d</text>
+<rect x="969.3" y="266.0" width="12" height="12" transform="rotate(45 975.3 272.0)" fill="#199e70"/>
+<path d="M975.3 294V314" fill="none" stroke="#9198a1" stroke-width="1.1"/>
+<text x="971.3" y="332" class="s" fill="#e6edf3" font-weight="600" text-anchor="end">later echo · LVEF ≤ 40 %</text>
+<text x="971.3" y="354" class="s" fill="#9198a1" text-anchor="end">or a ≥ 10-point drop</text>
+</g>
+<line x1="48" y1="412" x2="200" y2="412" stroke="#9198a1" stroke-width="1.2"/>
+<line x1="218" y1="412" x2="1068" y2="412" stroke="#9198a1" stroke-width="1.2"/>
+<line x1="200" y1="420" x2="208" y2="404" stroke="#9198a1" stroke-width="1.5"/>
+<line x1="210" y1="420" x2="218" y2="404" stroke="#9198a1" stroke-width="1.5"/>
+<line x1="48" y1="412" x2="48" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="48" y="438" class="m" fill="#6e7681" text-anchor="middle">−4 y</text>
+<line x1="94" y1="412" x2="94" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="94" y="438" class="m" fill="#6e7681" text-anchor="middle">−3 y</text>
+<line x1="140" y1="412" x2="140" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="140" y="438" class="m" fill="#6e7681" text-anchor="middle">−2 y</text>
+<line x1="232" y1="412" x2="232" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="232" y="438" class="m" fill="#6e7681" text-anchor="middle">−365 d</text>
+<line x1="438.8" y1="412" x2="438.8" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="438.8" y="438" class="m" fill="#6e7681" text-anchor="middle">−180 d</text>
+<line x1="640" y1="412" x2="640" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="640" y="438" class="m" fill="#e66767" text-anchor="middle">0</text>
+<line x1="673.5" y1="412" x2="673.5" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="673.5" y="438" class="m" fill="#6e7681" text-anchor="middle">+30 d</text>
+<line x1="841.2" y1="412" x2="841.2" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="841.2" y="438" class="m" fill="#6e7681" text-anchor="middle">+180 d</text>
+<line x1="1048" y1="412" x2="1048" y2="418" stroke="#9198a1" stroke-width="1.2"/>
+<text x="1048" y="438" class="m" fill="#6e7681" text-anchor="middle">+365 d</text>
+<text x="117" y="462" class="s" fill="#6e7681" text-anchor="middle">compressed</text>
+<text x="654" y="462" class="s" fill="#e6edf3" font-weight="600">Everything the model sees is fixed at t = 0.</text>
+<text x="654" y="484" class="s" fill="#9198a1">Patients without a follow-up echo are excluded,</text>
+<text x="654" y="506" class="s" fill="#9198a1">not labelled negative.</text>
+<rect x="24" y="536" width="1152" height="138" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<text x="44" y="570" class="s"><tspan fill="#9198a1" font-weight="600" letter-spacing="0.08em">V2 DATA</tspan></text>
+<text x="170" y="570" class="m" fill="#e6edf3" font-weight="600">MIMIC-IV-ECG</text>
+<text x="170" y="594" class="s" fill="#9198a1"><tspan class="m">800,035</tspan><tspan class="s"> ECGs · </tspan><tspan class="m">161,352</tspan><tspan class="s"> patients</tspan></text>
+<text x="494" y="582" class="s" font-size="18" fill="#6e7681" text-anchor="middle">+</text>
+<text x="520" y="570" class="m" fill="#e6edf3" font-weight="600">MIMIC-IV hosp</text>
+<text x="520" y="594" class="s" fill="#9198a1"><tspan class="s">drug, procedure, diagnosis events</tspan></text>
+<text x="834" y="582" class="s" font-size="18" fill="#6e7681" text-anchor="middle">+</text>
+<text x="860" y="570" class="m" fill="#e6edf3" font-weight="600">MIMIC-IV-ECHO</text>
+<text x="860" y="594" class="s" fill="#9198a1"><tspan class="s">structured LVEF</tspan></text>
+<line x1="44" y1="616" x2="1156" y2="616" stroke="#30363d" stroke-width="1"/>
+<text x="44" y="644" class="s" fill="#9198a1"><tspan font-weight="600" fill="#e6edf3">Fallback endpoint</tspan>  new-onset AF after cardiac surgery, predicted from the pre-op ECG</text>
+</svg>

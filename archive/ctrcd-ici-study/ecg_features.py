@@ -1,4 +1,4 @@
-# ai_ecg/features.py
+# ecg_features.py
 
 import json
 import numpy as np

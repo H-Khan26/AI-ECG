@@ -1,4 +1,4 @@
-# ai_ecg/selection.py
+# ecg_selection.py
 
 import os
 import glob
