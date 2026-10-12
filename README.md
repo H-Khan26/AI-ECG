@@ -178,58 +178,6 @@ The UCLA records cannot leave UCLA, so v2 rebuilds the experiment on public data
 | **Evaluation** | Row-level 5-fold CV | Patient-level splits, a locked held-out test set, ROC-AUC, PR-AUC and calibration |
 | **External validation** | — | Harvard-Emory ECG Database (HEEDB) |
 
-### Roadmap
-
-- [x] v1 study: pipeline, five model families and pilot results (UCLA Health)
-- [x] v2 experimental design and dataset selection
-- [x] Open-data loader that reproduces the v1 input contract (PTB-XL → `8 × 2500` at 250 Hz; it renders every figure here)
-- [ ] End-to-end smoke test on PTB-XL: baselines plus frozen foundation-model embeddings
-- [ ] PhysioNet credentialing for MIMIC-IV hosp and MIMIC-IV-ECHO
-- [ ] Cohort-count script: patients meeting each step of the paired design
-- [ ] Primary experiment: baselines vs. foundation-model arms, with confidence intervals
-- [ ] Serial-ECG arm: two pre-index ECGs per patient, delta embeddings
-- [ ] External validation on HEEDB
-
-## Repository layout
-
-```text
-archive/ctrcd-ici-study/    v1 study code and slide deck (UCLA data not included)
-  ecg_io.py                 MUSE XML → decoded, validated, 250 Hz leads
-  xml_to_csv.py             XML utilities: paced-ECG removal, 12-lead reconstruction
-  ecg_selection.py          cohort window selection around ICI start
-  ecg_features.py           NeuroKit2 interval features (HR, QRS, QT, T-axis)
-  ecg_augmentations.py      training-time waveform augmentations
-  models.py                 two-tower 1-D CNN + MLP
-  ecg_train.py              Random Forest and two-tower training with stratified CV
-  Model_eval.py             ROC/PR curves, confusion matrix, threshold metrics
-  AI_ECG_Presentation.pdf   study slide deck
-docs/
-  assets/                   README figures (light and dark variants)
-  figures/                  scripts that render the figures from open PTB-XL records
-requirements.txt
-```
-
-### Reproducing the figures
-
-```bash
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install torch                                   # pick the wheel for your CUDA version
-pip install -r requirements.txt
-python docs/figures/waveforms.py                    # 8-lead strip, rhythm gallery
-python docs/figures/animations.py                   # delineation and augmentation GIFs
-python docs/figures/charts.py                       # pilot results
-python docs/figures/diagrams_hero_pipeline.py       # banner, pipeline
-python docs/figures/diagrams_model_design.py        # record anatomy, two-tower, paired design
-```
-
-The scripts stream the required PTB-XL records directly from PhysioNet. No credentials are needed.
-
-## Data and privacy
-
-- **v1 data** came from the UCLA Health ECG archive under institutional approval. It is not included in this repository, and `.gitignore` blocks data files from being committed.
-- **Figures** use [PTB-XL](https://physionet.org/content/ptb-xl/1.0.3/) (Wagner et al., *Scientific Data*, 2020), licensed CC BY 4.0.
-- **v2** uses MIMIC-IV-ECG (open, ODbL) plus MIMIC-IV hosp and MIMIC-IV-ECHO, which require PhysioNet credentialing and a data use agreement. No credentialed data will be committed.
-
 ## Team
 
 **v1 study:** Dr. Abdullah Sarkar · Hamza Khan · Dr. Rohit Jain · Prof. Jeff Chiang, UCLA Health.
